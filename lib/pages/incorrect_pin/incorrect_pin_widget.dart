@@ -1,27 +1,26 @@
-import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'map_model.dart';
-export 'map_model.dart';
+import 'incorrect_pin_model.dart';
+export 'incorrect_pin_model.dart';
 
-class MapWidget extends StatefulWidget {
-  const MapWidget({super.key});
+class IncorrectPinWidget extends StatefulWidget {
+  const IncorrectPinWidget({super.key});
 
   @override
-  State<MapWidget> createState() => _MapWidgetState();
+  State<IncorrectPinWidget> createState() => _IncorrectPinWidgetState();
 }
 
-class _MapWidgetState extends State<MapWidget> {
-  late MapModel _model;
+class _IncorrectPinWidgetState extends State<IncorrectPinWidget> {
+  late IncorrectPinModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => MapModel());
+    _model = createModel(context, () => IncorrectPinModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -41,7 +40,6 @@ class _MapWidgetState extends State<MapWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        resizeToAvoidBottomInset: false,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
@@ -78,24 +76,22 @@ class _MapWidgetState extends State<MapWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Expanded(
-                child: FlutterFlowGoogleMap(
-                  controller: _model.googleMapsController,
-                  onCameraIdle: (latLng) => _model.googleMapsCenter = latLng,
-                  initialLocation: _model.googleMapsCenter ??=
-                      const LatLng(31.7619, 106.485),
-                  markerColor: GoogleMarkerColor.violet,
-                  mapType: MapType.normal,
-                  style: GoogleMapStyle.standard,
-                  initialZoom: 14.0,
-                  allowInteraction: true,
-                  allowZoom: true,
-                  showZoomControls: true,
-                  showLocation: true,
-                  showCompass: false,
-                  showMapToolbar: false,
-                  showTraffic: false,
-                  centerMapOnMarkerTap: true,
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Incorrect Pin',
+                      textAlign: TextAlign.center,
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Inter',
+                            fontSize: 24.0,
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                  ],
                 ),
               ),
             ],

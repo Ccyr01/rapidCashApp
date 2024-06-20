@@ -1,21 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
-import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
 import '/main.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -80,45 +72,69 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? NavBarPage() : Auth1Widget(),
+          appStateNotifier.loggedIn ? const NavBarPage() : const Auth1Widget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? NavBarPage() : Auth1Widget(),
+              appStateNotifier.loggedIn ? const NavBarPage() : const Auth1Widget(),
         ),
         FFRoute(
           name: 'qr_loyalty_rewards',
           path: '/qrLoyaltyRewards',
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'qr_loyalty_rewards')
-              : QrLoyaltyRewardsWidget(),
+              ? const NavBarPage(initialPage: 'qr_loyalty_rewards')
+              : const QrLoyaltyRewardsWidget(),
         ),
         FFRoute(
           name: 'loyalty_points',
           path: '/loyaltyPoints',
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'loyalty_points')
-              : LoyaltyPointsWidget(),
+              ? const NavBarPage(initialPage: 'loyalty_points')
+              : const LoyaltyPointsWidget(),
         ),
         FFRoute(
           name: 'Auth1',
           path: '/auth1',
-          builder: (context, params) => Auth1Widget(),
+          builder: (context, params) => const Auth1Widget(),
         ),
         FFRoute(
           name: 'rewards',
           path: '/rewards',
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'rewards')
-              : RewardsWidget(),
+              ? const NavBarPage(initialPage: 'rewards')
+              : const RewardsWidget(),
         ),
         FFRoute(
           name: 'map',
           path: '/map',
           builder: (context, params) =>
-              params.isEmpty ? NavBarPage(initialPage: 'map') : MapWidget(),
+              params.isEmpty ? const NavBarPage(initialPage: 'map') : const MapWidget(),
+        ),
+        FFRoute(
+          name: 'punchCard',
+          path: '/punchCard',
+          builder: (context, params) => const PunchCardWidget(),
+        ),
+        FFRoute(
+          name: 'punchCardLogin',
+          path: '/punchCardLogin',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'punchCardLogin')
+              : const PunchCardLoginWidget(),
+        ),
+        FFRoute(
+          name: 'IncorrectPin',
+          path: '/incorrectPin',
+          builder: (context, params) => const IncorrectPinWidget(),
+        ),
+        FFRoute(
+          name: 'Notifications',
+          path: '/notifications',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'Notifications')
+              : const NotificationsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -352,7 +368,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

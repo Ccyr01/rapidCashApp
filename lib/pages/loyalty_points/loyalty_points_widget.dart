@@ -3,9 +3,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'loyalty_points_model.dart';
 export 'loyalty_points_model.dart';
 
@@ -51,7 +48,7 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
+              SizedBox(
                 height: 200.0,
                 child: Stack(
                   children: [
@@ -69,9 +66,9 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(-1.0, 1.0),
+                      alignment: const AlignmentDirectional(-1.0, 1.0),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 0.0, 16.0),
                         child: Container(
                           width: 90.0,
@@ -85,7 +82,7 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 4.0, 4.0, 4.0, 4.0),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(50.0),
@@ -101,7 +98,7 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0.98, -0.98),
+                      alignment: const AlignmentDirectional(0.98, -0.98),
                       child: FFButtonWidget(
                         onPressed: () async {
                           GoRouter.of(context).prepareAuthEvent();
@@ -113,9 +110,9 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                         text: 'Logout',
                         options: FFButtonOptions(
                           height: 40.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
@@ -125,7 +122,7 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                                     letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),
@@ -137,9 +134,9 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                 child: Text(
-                  'Welcome, ${currentUserEmail}',
+                  'Welcome, $currentUserEmail',
                   style: FlutterFlowTheme.of(context).headlineSmall.override(
                         fontFamily: 'Sora',
                         color: FlutterFlowTheme.of(context).secondary,
@@ -148,7 +145,7 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 16.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 16.0),
                 child: Text(
                   dateTimeFormat('MMMEd', getCurrentTimestamp),
                   style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -159,7 +156,7 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
                 child: Text(
                   'Your Loyalty Rewards',
                   style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -170,7 +167,7 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                 child: Material(
                   color: Colors.transparent,
                   elevation: 2.0,
@@ -184,9 +181,9 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                       borderRadius: BorderRadius.circular(8.0),
                     ),
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
                           12.0, 12.0, 12.0, 12.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
@@ -205,7 +202,7 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                               size: 24.0,
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'My Rewards',
@@ -221,7 +218,7 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                             ),
                             Expanded(
                               child: Align(
-                                alignment: AlignmentDirectional(0.9, 0.0),
+                                alignment: const AlignmentDirectional(0.9, 0.0),
                                 child: Icon(
                                   Icons.arrow_forward_ios,
                                   color: FlutterFlowTheme.of(context)
@@ -238,7 +235,7 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                 child: InkWell(
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,
@@ -258,7 +255,7 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                       height: 60.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             blurRadius: 3.0,
                             color: Color(0x33000000),
@@ -271,9 +268,9 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                         ],
                         borderRadius: BorderRadius.circular(8.0),
                       ),
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             12.0, 12.0, 12.0, 12.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -284,7 +281,7 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                               size: 24.0,
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Scan QR Code',
@@ -300,7 +297,7 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                             ),
                             Expanded(
                               child: Align(
-                                alignment: AlignmentDirectional(0.9, 0.0),
+                                alignment: const AlignmentDirectional(0.9, 0.0),
                                 child: Icon(
                                   Icons.arrow_forward_ios,
                                   color: FlutterFlowTheme.of(context)
@@ -317,7 +314,7 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 0.0, 0.0),
                 child: AuthUserStreamWidget(
                   builder: (context) => Text(
                     valueOrDefault<String>(
@@ -336,7 +333,7 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                 child: Material(
                   color: Colors.transparent,
                   elevation: 2.0,
@@ -348,7 +345,7 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                     height: 60.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           blurRadius: 3.0,
                           color: Color(0x33000000),
@@ -361,9 +358,9 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                       ],
                       borderRadius: BorderRadius.circular(8.0),
                     ),
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
                           12.0, 12.0, 12.0, 12.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
@@ -374,7 +371,7 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                             size: 24.0,
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Check Points',
@@ -390,7 +387,7 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                           ),
                           Expanded(
                             child: Align(
-                              alignment: AlignmentDirectional(0.9, 0.0),
+                              alignment: const AlignmentDirectional(0.9, 0.0),
                               child: Icon(
                                 Icons.arrow_forward_ios,
                                 color:
@@ -412,9 +409,9 @@ class _LoyaltyPointsWidgetState extends State<LoyaltyPointsWidget> {
                 text: 'Button',
                 options: FFButtonOptions(
                   height: 40.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Inter',
                         color: Colors.white,
